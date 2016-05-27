@@ -1,0 +1,326 @@
+{  
+   "HydrologyGovNp":"Hydrology.gov.np",
+   "MfdGovNp":"Mfd.gov.np",
+   "DATA_SOURCE":{  
+      "Hydrology.gov.np":{  
+         "URL":"http://hydrology.gov.np/new/bull3/index.php/hydrology/ajax/data_sahamati/get_data",
+         "STATION_MAP":{  
+            "karnali_chisapani":"1008",
+            "asaraghat":"1075",
+            "samajhighat":"1073",
+            "tallo_dhungeshwor":"9707",
+            "dipayal":"1076",
+            "chitreghat":"9708"
+         },
+         "PARAMETER_MAP":{  
+            "rainfall":"1",
+            "water_level":"2"
+         },
+         "REQUEST_BODY":{  
+            "1008":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  },
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "1073":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  },
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "1075":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  },
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "1076":{  
+               "param":{  
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "9707":{  
+               "param":{  
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "9708":{  
+               "param":{  
+                  "2":{  
+                     "real_time":{  
+                        "1 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "Mfd.gov.np":{  
+         "URL":"http://mfd.gov.np/bull3/index.php/wscada/ajax/data_api/get_data",
+         "STATION_MAP":{  
+            "safebagar_achham":"5075",
+            "dadimadi_dailekh":"5073",
+            "jamu_surkhet":"5052",
+            "rakam_surkhet":"5055",
+            "manma_kalikot":"5071",
+            "dilichaur_jumla":"5077",
+            "tatapani_jumla":"5054"
+         },
+         "PARAMETER_MAP":{  
+            "rainfall":"1",
+            "water_level":"2"
+         },
+         "REQUEST_BODY":{  
+            "5052":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5054":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5055":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5071":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5073":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5075":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            },
+            "5077":{  
+               "param":{  
+                  "1":{  
+                     "sum":{  
+                        "1 HOUR":{  
+
+                        },
+                        "3 HOUR":{  
+
+                        },
+                        "6 HOUR":{  
+
+                        },
+                        "12 HOUR":{  
+
+                        },
+                        "24 HOUR":{  
+
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "REFRESH_INTERVAL":20000
+}
