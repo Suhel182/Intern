@@ -6,7 +6,8 @@ import java.util.TimerTask;
 
 public class SecondMain {
     public static void main(String[] arg) throws IOException, JSONException {
-        JsonParser jp = new JsonParser();
+        final JsonParser jp = new JsonParser();
+        int refreshInterval = jp.getInterval();
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -21,6 +22,6 @@ public class SecondMain {
                 } catch (Exception e) {
                 }
             }
-        }, 0, jp.getInterval());
+        }, 0, refreshInterval);
     }
 }

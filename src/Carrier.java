@@ -3,7 +3,7 @@
  */
 public class Carrier {
     private String url,data;
-    private static int dataSourceLength;
+
     public Carrier(String s, String d){
         url=s;
         data=d;

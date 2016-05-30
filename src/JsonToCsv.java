@@ -2,34 +2,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by Dell on 5/29/2016.
  */
 public class JsonToCsv {
-    public String getDataToSave(String s,int paramcode,String type,String stationcode) throws JSONException {
+    public String jsonObjectToCsvRow(JSONObject job,String stationcode,String paramcode,String type) throws JSONException {
         StringBuilder sb = new StringBuilder();
-        JSONObject job = new JSONObject(s);
-        JSONArray jTypeArrr = job.getJSONObject(type).names();;
-        if(paramcode==1){
-            for(int i=0; i<jTypeArrr.length(); i++){
-                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(i).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(i)).toString()+System.getProperty("line.separator");
-                sb.append(dataTSend);
-            }
-        }
-        if(paramcode==2){
-            String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(0).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(0)).toString();
+        JSONArray jTypeArrr = job.getJSONObject(type).names();
+        for(int i=0;i<jTypeArrr.length();i++){
+            String value = job.getJSONObject(type).get((String) jTypeArrr.get(i)).toString();
+            String dataTSend=DateandTime.getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(i).toString()+","+value+System.getProperty("line.separator");
             sb.append(dataTSend);
         }
+        sb.append(System.getProperty("line.separator"));
         return sb.toString();
-    }
-
-    public static String getDatenTime(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
+    }  
 }
