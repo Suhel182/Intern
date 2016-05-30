@@ -13,14 +13,16 @@ public class JsonToCsv {
     public String getDataToSave(String s,int paramcode,String type,String stationcode) throws JSONException {
         StringBuilder sb = new StringBuilder();
         JSONObject job = new JSONObject(s);
+        JSONArray jar = job.getJSONObject(type).names();;
         if(paramcode==1){
-            JSONArray jar = job.getJSONObject("sum").names();
             for(int i=0; i<jar.length(); i++){
-                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jar.get(i).toString()+","+job.getJSONObject("sum").get((String) jar.get(i)).toString()+System.getProperty("line.separator");
+                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jar.get(i).toString()+","+job.getJSONObject(type).get((String) jar.get(i)).toString()+System.getProperty("line.separator");
                 sb.append(dataTSend);
             }
-        }else if(paramcode==2){
-            sb.append(job.getJSONObject("real_time").get("1 HOUR").toString());
+        }
+        if(paramcode==2){
+            String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jar.get(0).toString()+","+job.getJSONObject(type).get((String) jar.get(0)).toString();
+            sb.append(dataTSend);
         }
         return sb.toString();
     }
