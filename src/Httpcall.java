@@ -28,10 +28,17 @@ public class Httpcall {
             os.write(data.getBytes());
             os.flush();
 
-            BufferedReader br=new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String output;
-            while((output=br.readLine())!=null){
-                sb.append(output);
+            if(connection.getResponseCode()!=200){
+                System.out.println("Unauthorized content");
+            }
+            else if(connection.getResponseCode()==-1){
+                System.out.println("Response content invalid");
+            }else {
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String output;
+                while ((output = br.readLine()) != null) {
+                    sb.append(output);
+                }
             }
         } catch (MalformedURLException ex) {
             Logger.getLogger(Httpcall.class.getName()).log(Level.SEVERE, null, ex);
