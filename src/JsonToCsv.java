@@ -10,20 +10,18 @@ import java.util.Date;
  * Created by Dell on 5/29/2016.
  */
 public class JsonToCsv {
-    public String getDataToSave(String s,int paramcode,String type,String stationcode) throws JSONException {
+    public String jsonObjectToCSVRow(JSONObject job) throws JSONException {
         StringBuilder sb = new StringBuilder();
-        JSONObject job = new JSONObject(s);
-        JSONArray jTypeArrr = job.getJSONObject(type).names();;
-        if(paramcode==1){
-            for(int i=0; i<jTypeArrr.length(); i++){
-                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(i).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(i)).toString()+System.getProperty("line.separator");
-                sb.append(dataTSend);
-            }
+
+        String type;
+        
+        JSONObject paramObject = object.get(type);
+        String[] keys = paramObject.keys();
+        
+        for (String key: keys) {
+            String dataToSend = getDatenTime()+","+stationcode+","+paramcode+","+type+","+paramObject.get(key)+System.getProperty("line.separator");
         }
-        if(paramcode==2){
-            String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(0).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(0)).toString();
-            sb.append(dataTSend);
-        }
+
         return sb.toString();
     }
 
