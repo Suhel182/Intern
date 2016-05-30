@@ -12,6 +12,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 public class Httpcall {
     InputStream inputStream;
     StringBuilder sb;
@@ -34,6 +35,7 @@ public class Httpcall {
             }
         } catch (MalformedURLException ex) {
             Logger.getLogger(Httpcall.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("not internet");
         }
         return(sb.toString());
     }
