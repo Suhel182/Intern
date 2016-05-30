@@ -13,15 +13,15 @@ public class JsonToCsv {
     public String getDataToSave(String s,int paramcode,String type,String stationcode) throws JSONException {
         StringBuilder sb = new StringBuilder();
         JSONObject job = new JSONObject(s);
-        JSONArray jar = job.getJSONObject(type).names();;
+        JSONArray jTypeArrr = job.getJSONObject(type).names();;
         if(paramcode==1){
-            for(int i=0; i<jar.length(); i++){
-                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jar.get(i).toString()+","+job.getJSONObject(type).get((String) jar.get(i)).toString()+System.getProperty("line.separator");
+            for(int i=0; i<jTypeArrr.length(); i++){
+                String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(i).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(i)).toString()+System.getProperty("line.separator");
                 sb.append(dataTSend);
             }
         }
         if(paramcode==2){
-            String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jar.get(0).toString()+","+job.getJSONObject(type).get((String) jar.get(0)).toString();
+            String dataTSend=getDatenTime()+","+stationcode+","+paramcode+","+type+","+jTypeArrr.get(0).toString()+","+job.getJSONObject(type).get((String) jTypeArrr.get(0)).toString();
             sb.append(dataTSend);
         }
         return sb.toString();

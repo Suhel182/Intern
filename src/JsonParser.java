@@ -11,8 +11,8 @@ import java.util.HashMap;
 import org.json.*;
 public class JsonParser {
     private StringBuilder sb;
-    private JSONObject jobj;
-    private JSONArray jar;
+    private JSONObject jConfigObj;
+    private JSONArray jDataSrcArr;
 
     public JsonParser() throws FileNotFoundException, IOException, JSONException{
         BufferedReader br = new BufferedReader(new FileReader("asdf.txt"));
@@ -21,8 +21,8 @@ public class JsonParser {
         while((line = br.readLine())!=null){
             sb.append(line);
         }
-        jobj = new JSONObject(sb.toString());
-        jar = jobj.getJSONObject("DATA_SOURCE").names();
+        jConfigObj = new JSONObject(sb.toString());
+        jDataSrcArr = jConfigObj.getJSONObject("DATA_SOURCE").names();
     }
     /*
     public Object[] get() throws FileNotFoundException, IOException, JSONException{
@@ -40,9 +40,9 @@ public class JsonParser {
         ArrayList<Carrier> list = new ArrayList<Carrier>();
         HashMap<String,String> hmap = new HashMap<String,String>();
         //Carrier.setDataSourceLength(jar.length());
-        for(int i=0;i<jar.length();i++){
-            String a=jobj.getJSONObject("DATA_SOURCE").getJSONObject((String) jar.get(i)).get("URL").toString();
-            String b=jobj.getJSONObject("DATA_SOURCE").getJSONObject((String) jar.get(i)).get("REQUEST_BODY").toString();
+        for(int i=0;i<jDataSrcArr.length();i++){
+            String a=jConfigObj.getJSONObject("DATA_SOURCE").getJSONObject((String) jDataSrcArr.get(i)).get("URL").toString();
+            String b=jConfigObj.getJSONObject("DATA_SOURCE").getJSONObject((String) jDataSrcArr.get(i)).get("REQUEST_BODY").toString();
             list.add(new Carrier(a,b));
         }
         return list;
@@ -50,9 +50,9 @@ public class JsonParser {
 
 
     public String getSrcName(int i) throws JSONException{
-        return (String)jar.get(i);
+        return (String)jDataSrcArr.get(i);
     }
     public int getInterval() throws JSONException {
-        return Integer.valueOf(jobj.get("REFRESH_INTERVAL").toString());
+        return Integer.valueOf(jConfigObj.get("REFRESH_INTERVAL").toString());
     }
 }
